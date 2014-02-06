@@ -13,6 +13,20 @@
 #  Sarunas Vancevicius original: http://www.redbrick.dcu.ie/~svan/configs/screenrc
 #  Mike Perry original:  http://fscked.org/writings/225notes/unix/.screenrc
 
+# Fix solarized color in GNU screen
+#   see:
+#   http://stackoverflow.com/questions/12774141/strange-changing-background-color-in-vim-solarized
+#   https://github.com/altercation/solarized/issues/250
+#   http://robotsrule.us/vim/
+#
+#   also in ~/.vimrc:
+#       set t_Co=256
+
+term screen-256color
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+#defbce "on"
+
 ## -----------------------------------------------------------------------------------------
 ## -- 1) Set variables and keybindings for emacs compatibility (remapping Ctrl-A to Ctrl-T)
 ## -----------------------------------------------------------------------------------------
@@ -128,3 +142,4 @@ screen -t bash 1
 #    %+Lw     - window list from the next window on (-), show window flags (L)
 #    %-0<     - truncation/padding point.  Place this point zero spaces (0)
 #               from the right margin (-).
+
